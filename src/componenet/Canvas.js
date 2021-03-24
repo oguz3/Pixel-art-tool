@@ -11,7 +11,7 @@ function Canvas({row, coll}){
     drawMatrix(context, row, coll);
   }, [row, coll])
   
-  return <canvas ref={canvasRef} width="500" height="500"/>
+  return <canvas ref={canvasRef} width={15*row} height={15*coll}/>
 }
 
 export default Canvas
