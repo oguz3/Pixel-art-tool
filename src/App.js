@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import Canvas from './componenet/Canvas';
 import styles from './style/App.module.css';
-import Pencil from './icons/pencil';
-import Eraser from './icons/eraser';
+import Button from './componenet/Button';
 
 function App() {
-  const [row, setRow] = useState(50)
-  const [coll, setColl] = useState(50)
+  const [row, setRow] = useState(124)
+  const [coll, setColl] = useState(55)
+  const [activeItem, setActiveItem] = useState('pencil');
+
   return (
     <div className={styles.App}>
         <div className={styles.InputBox}>
@@ -19,12 +20,8 @@ function App() {
             <input value={coll} onChange={event => setColl(event.target.value)} />
           </div>
           <div className={styles.BtnBox}>
-            <button>
-              <Pencil />
-            </button>
-            <button>
-              <Eraser />
-            </button>
+              <Button type="pencil" activeItem={activeItem} setActiveItem={setActiveItem}/>
+              <Button type="eraser" activeItem={activeItem} setActiveItem={setActiveItem}/>
           </div>
         </div>
 
