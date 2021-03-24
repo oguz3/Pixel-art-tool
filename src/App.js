@@ -18,8 +18,14 @@ function App() {
             <label>Height: </label>
             <input value={coll} onChange={event => setColl(event.target.value)} />
           </div>
-          <Pencil />
-          <Eraser />
+          <div className={styles.BtnBox}>
+            <button>
+              <Pencil />
+            </button>
+            <button>
+              <Eraser />
+            </button>
+          </div>
         </div>
 
         <div className={styles.CanvasBox}>

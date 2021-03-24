@@ -9,6 +9,14 @@ body {
 		"Helvetica Neue", sans-serif;
 	background: #345;
 }
+button {
+	padding: 0;
+	border: 0;
+	height: 32px;
+	width: 32px;
+	border-radius: 4px;
+	background: white;
+}
 ::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
