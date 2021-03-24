@@ -1,0 +1,46 @@
+.App {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+.InputBox {
+	display: flex;
+	gap: 32px;
+}
+.Input {
+	display: flex;
+	flex-direction: column;
+}
+.Input label {
+	color: #fff;
+	margin: 0;
+	margin-bottom: 6px;
+}
+.Input input {
+	height: 20px;
+	width: 75px;
+	border: 0;
+	padding: 5px 10px;
+  border-radius: 2px;
+}
+.CanvasBox {
+  background-color: white;
+  border-radius: 2px;
+  overflow: scroll;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 100px);
+}
+.iconsBox{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 10px;
+  color: gray;
+}
+.iconsBox a{
+  color: rgb(155, 155, 155);
+  text-decoration: none;
+}
