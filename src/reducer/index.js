@@ -1,6 +1,7 @@
 import { SETROW, SETCOLL, SETITEM } from "../actions/index";
 
 const INITIAL_STATE = {
+    cellSize: 15,
     row: 124,
     coll: 55,
     activeItem: 'pencil',

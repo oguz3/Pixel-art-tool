@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { connect } from 'react-redux';
 import { setRow, setColl } from './actions';
 import Canvas from './componenet/Canvas';
@@ -6,8 +5,6 @@ import styles from './style/App.module.css';
 import Button from './componenet/Button';
 
 function App(props) {
-  const [activeItem, setActiveItem] = useState('pencil');
-
   return (
     <div className={styles.App}>
         <div className={styles.InputBox}>
