@@ -16,7 +16,7 @@ function App(props) {
             <label>Height: </label>
             <input value={props.coll} onChange={event => props.setColl(event.target.value)} />
           </div>
-          <div className={styles.Input}>
+          <div className={`${styles.Input} colorPicker`}>
             <label>Color: </label>
             <input type="color" value={props.color} onChange={event => props.setColor(event.target.value)} />
           </div>
