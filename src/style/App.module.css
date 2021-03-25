@@ -10,6 +10,9 @@
 	display: flex;
 	gap: 32px;
 	align-items: flex-end;
+	max-width: calc(100vw - 36px);
+    margin: 0px 18px;
+    overflow-x: scroll;
 }
 .Input {
 	display: flex;
