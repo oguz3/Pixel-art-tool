@@ -12,16 +12,20 @@ function Canvas(props){
 
     drawMatrix(context, props.row, props.coll, props.cellSize);
 
-    canvas.addEventListener('click', (e) => {
+    const clickCanvas = (e) => {
       draw(canvas, context, e, props.row, props.coll, props.cellSize)
-    });
+    };
 
+    document.addEventListener("click", (e) => clickCanvas(e));
+    return () => {
+      document.removeEventListener("click", (e) => clickCanvas(e));
+    };
   }, [props.row, props.coll, props.cellSize])
   
   return (
     <canvas 
-        ref={canvasRef} 
-        width={15*props.row} 
+        ref={canvasRef}
+        width={15*props.row}
         height={15*props.coll}
     />
   );
