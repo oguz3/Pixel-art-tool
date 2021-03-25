@@ -2,7 +2,7 @@
 Free online pixel art drawing website. The project was created using React.
 
 ## Preview Link
-- [Draw-pixel-art](pixel-art-tool.web.app/)
+- [Draw-pixel-art](https://pixel-art-tool.web.app/)
 
 ## Tech/Framework Used
 * React
