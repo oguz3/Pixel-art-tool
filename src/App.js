@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { setRow, setColl } from './actions';
 import Canvas from './componenet/Canvas';
 import styles from './style/App.module.css';
 import Button from './componenet/Button';
 
-function App() {
-  const [row, setRow] = useState(124)
-  const [coll, setColl] = useState(55)
+function App(props) {
   const [activeItem, setActiveItem] = useState('pencil');
 
   return (
@@ -13,20 +13,20 @@ function App() {
         <div className={styles.InputBox}>
           <div className={styles.Input}>
             <label>Width: </label>
-            <input value={row} onChange={event => setRow(event.target.value)} />
+            <input value={props.row} onChange={event => props.setRow(event.target.value)} />
           </div>
           <div className={styles.Input}>
             <label>Height: </label>
-            <input value={coll} onChange={event => setColl(event.target.value)} />
+            <input value={props.coll} onChange={event => props.setColl(event.target.value)} />
           </div>
           <div className={styles.BtnBox}>
-              <Button type="pencil" activeItem={activeItem} setActiveItem={setActiveItem}/>
-              <Button type="eraser" activeItem={activeItem} setActiveItem={setActiveItem}/>
+              <Button type="pencil"/>
+              <Button type="eraser"/>
           </div>
         </div>
 
         <div className={styles.CanvasBox}>
-          <Canvas row={row} coll={coll}/>
+          <Canvas/>
         </div>
 
         <div className={styles.iconsBox}>
@@ -37,4 +37,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+      row: state.row,
+      coll: state.coll
+  };
+};
+
+export default connect(mapStateToProps, { setRow, setColl })(App);

@@ -1,15 +1,16 @@
+import { connect } from 'react-redux';
+import { setItem } from '../actions/index';
 import Pencil from '../icons/pencil';
 import Eraser from '../icons/eraser';
 import styles from './Button.module.css';
-import { useState } from 'react';
 
-function Button({type, activeItem, setActiveItem}){
+function Button(props){
   return(
     <button 
-      className={`${styles.Button} ${activeItem === type ? 'ActiveBtn' : null}`}
-      onClick={() => {setActiveItem(type); console.log(activeItem)}}
+      className={`${styles.Button} ${props.activeItem === props.type ? 'ActiveBtn' : null}`}
+      onClick={() => {props.setItem(props.type)}}
     >
-        {type === 'pencil'
+        {props.type === 'pencil'
             ? <Pencil />
             : <Eraser />
         }
@@ -17,4 +18,10 @@ function Button({type, activeItem, setActiveItem}){
   );
 }
 
-export default Button;
+const mapStateToProps = (state) => {
+  return {
+      activeItem: state.activeItem,
+  };
+};
+
+export default connect(mapStateToProps, { setItem })(Button);
