@@ -13,6 +13,14 @@ body {
     border: 1px dashed white !important;
     color: white !important;
 }
+.gridCanvas{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.gridCanvas.hiddenGrid{
+	display: none;
+}
 :focus {
     outline: none;
 }

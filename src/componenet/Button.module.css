@@ -1,4 +1,7 @@
 .Button{
+	display: flex;
+    align-items: center;
+    justify-content: center;
 	padding: 0;
 	border: 0;
 	height: 32px;

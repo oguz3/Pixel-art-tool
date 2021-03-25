@@ -1,5 +1,5 @@
 // Canvas üzerinde cizim yapıyoruz
-export default function draw(canvas, ctx, e, row, coll, cellSize) {
+export default function draw(canvas, ctx, e, row, coll, cellSize, item, color) {
     let pos = getMousePos(canvas, e);
     let posX, posY;
     for(let i=0; i<row; i++){
@@ -12,8 +12,12 @@ export default function draw(canvas, ctx, e, row, coll, cellSize) {
           posY = cellSize*j;
       }
     }
-    ctx.fillStyle = '#000';
-    ctx.fillRect (posX, posY, cellSize, cellSize);
+    ctx.fillStyle = color;
+    if(item === 'pencil'){
+        ctx.fillRect (posX, posY, cellSize, cellSize);
+    }else if(item === 'eraser'){
+        ctx.clearRect(posX, posY, cellSize, cellSize);
+    }
 }
 
 function getMousePos(canvas, e) {
