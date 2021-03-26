@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import drawMatrix from '../functions/drawMatrix';
+import uploadDraw from '../functions/uploadDraw';
 import draw from '../functions/draw';
 
 function Canvas(props){
@@ -20,6 +21,21 @@ function Canvas(props){
     //gridCanvas'a grid sistemini cizdiriyoruz
     props.canvasToCode.matrix = [];
     drawMatrix(gridContext, props.row, props.coll, props.cellSize, props.canvasToCode.matrix);
+    let data = {
+      "color": [
+        { "key": 1, "color": "#000000" },
+        { "key": 24, "color": "#fa1e1e" },
+        { "key": 2, "color": "#94b715" }
+      ],
+      "matrix": [
+        [1, 0, 1, 0, 24],
+        [0, 1, 0, 24, 0],
+        [0, 0, 1, 0, 0],
+        [0, 24, 0, 1, 0],
+        [24, 0, 2, 0, 1]
+      ]
+    }    
+    uploadDraw(context, props.cellSize, data, props.canvasToCode)
   }, [props.row, props.coll, props.cellSize])
 
   const mouseDown = (e) => {

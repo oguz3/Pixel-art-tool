@@ -46,7 +46,7 @@ function App(props) {
                 <Button type="eraser"/>
                 <Button type="grid"/>
             </div>
-            
+
             <button onClick={() => downloadBtn()}>
               <a
                 type="button"
