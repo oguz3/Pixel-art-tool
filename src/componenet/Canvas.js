@@ -32,7 +32,7 @@ function Canvas(props){
   }
   const drawCanvas = (e) => {
     if(isDown === true){
-      draw(canvasRef.current, contextRef.current, e, props.row, props.coll, props.cellSize, props.activeItem, props.color, props.canvasToCode)
+      draw(canvasRef.current, contextRef.current, e, props.row, props.coll, props.cellSize, props.activeItem, props.color, props.colorKey, props.canvasToCode)
       console.log(props.canvasToCode)
     }
   }
@@ -65,6 +65,7 @@ const mapStateToProps = (state) => {
       row: state.row,
       coll: state.coll,
       color: state.color,
+      colorKey: state.colorKey,
       cellSize: state.cellSize,
       activeItem: state.activeItem,
       hiddenGrid: state.hiddenGrid,

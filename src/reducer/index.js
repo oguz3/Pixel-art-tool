@@ -4,11 +4,12 @@ const INITIAL_STATE = {
     cellSize: 15,
     row: 20,
     coll: 20,
-    activeItem: 'pencil',
-    color: '#000',
     hiddenGrid: false,
+    activeItem: 'pencil',
+    color: '#000000',
+    colorKey: 1,
     canvasToCode: {
-        color: [],
+        color: [{key: 1, color: '#000000'}],
         matrix: []
     }
 };
@@ -38,7 +39,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case SETCOLOR:
         return {
             ...state,
-            color: action.payload
+            color: action.payload,
+            colorKey: parseInt(state.colorKey)+1
         };
     default:
       return state;
