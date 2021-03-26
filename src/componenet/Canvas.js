@@ -18,6 +18,7 @@ function Canvas(props){
     const gridCanvas = gridCanvasRef.current
     const gridContext = gridCanvas.getContext('2d')
     //gridCanvas'a grid sistemini cizdiriyoruz
+    props.canvasToCode.matrix = [];
     drawMatrix(gridContext, props.row, props.coll, props.cellSize, props.canvasToCode.matrix);
   }, [props.row, props.coll, props.cellSize])
 
@@ -32,7 +33,6 @@ function Canvas(props){
   const drawCanvas = (e) => {
     if(isDown === true){
       draw(canvasRef.current, contextRef.current, e, props.row, props.coll, props.cellSize, props.activeItem, props.color, props.colorKey, props.canvasToCode)
-      //console.log(props.canvasToCode)
     }
   }
   

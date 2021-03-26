@@ -1,5 +1,5 @@
 .App {
-    height: 100vh;
+    height: calc(100vh - 16px);
 }
 .App h1{
 	margin: 0;

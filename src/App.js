@@ -3,8 +3,26 @@ import { setRow, setColl, setColor } from './actions';
 import Canvas from './componenet/Canvas';
 import styles from './style/App.module.css';
 import Button from './componenet/Button';
+import { useState } from 'react';
 
 function App(props) {
+  const[pointerEvents, setPointerEvents] = useState('none');
+  const [selectedFile, setSelectedFile] = useState();
+
+  function downloadBtn () {
+    //Son renkle yapılan cizimi ve o rengi almıyor indirmeden önce 
+    //renk değiştirirsem hepsini indiriyor.
+    props.setColor(props.color);
+    setPointerEvents('all')
+  }
+  const changeHandler = (e) => {
+    const fileReader = new FileReader();
+    fileReader.readAsText(e.target.files[0], "UTF-8");
+    fileReader.onload = e => {
+      setSelectedFile(JSON.parse(e.target.result));
+    };
+	};
+
   return (
     <div className={styles.App}>
       <h1>Pixel Art</h1>
@@ -28,6 +46,19 @@ function App(props) {
                 <Button type="eraser"/>
                 <Button type="grid"/>
             </div>
+            
+            <button onClick={() => downloadBtn()}>
+              <a
+                type="button"
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(props.canvasToCode))}`}
+                download="save.json"
+                style={{pointerEvents: pointerEvents}}
+                >
+                  Save File
+              </a>
+            </button>
+
+            <input type="file" name="file" onChange={changeHandler} />
           </div>
 
           <div className={styles.CanvasArea}>

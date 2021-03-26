@@ -30,6 +30,7 @@ function Button(props){
       onClick={() => clickBtn()}
     >
         {icon()}
+        {props.children}
     </button>
   );
 }
