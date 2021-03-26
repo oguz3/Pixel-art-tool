@@ -19,7 +19,6 @@ function Canvas(props){
     const gridContext = gridCanvas.getContext('2d')
     //gridCanvas'a grid sistemini cizdiriyoruz
     drawMatrix(gridContext, props.row, props.coll, props.cellSize, props.canvasToCode.matrix);
-    console.log(props.canvasToCode)
   }, [props.row, props.coll, props.cellSize])
 
   const mouseDown = (e) => {
@@ -33,7 +32,7 @@ function Canvas(props){
   const drawCanvas = (e) => {
     if(isDown === true){
       draw(canvasRef.current, contextRef.current, e, props.row, props.coll, props.cellSize, props.activeItem, props.color, props.colorKey, props.canvasToCode)
-      console.log(props.canvasToCode)
+      //console.log(props.canvasToCode)
     }
   }
   

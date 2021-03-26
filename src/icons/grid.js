@@ -8,7 +8,7 @@ function Grid() {
 		>
 			<g
 				fill="none"
-				fill-rule="evenodd"
+				fillRule="evenodd"
 			>
 				<g
 					id="Outlined"
