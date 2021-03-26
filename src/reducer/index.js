@@ -2,11 +2,15 @@ import { SETROW, SETCOLL, SETITEM, SETGRID, SETCOLOR } from "../actions/index";
 
 const INITIAL_STATE = {
     cellSize: 15,
-    row: 124,
-    coll: 55,
+    row: 20,
+    coll: 20,
     activeItem: 'pencil',
-    color: null,
-    hiddenGrid: false
+    color: '#000',
+    hiddenGrid: false,
+    canvasToCode: {
+        color: [],
+        matrix: []
+    }
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
