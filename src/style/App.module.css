@@ -63,6 +63,16 @@
     max-width: calc(100vw - 408px);
     max-height: calc(100vh - 140px);
 }
+.AnimationArea{
+    width: 200px;
+    padding: 16px 32px;
+}
+.AnimationArea img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: white;
+}
 .iconsBox {
 	position: absolute;
 	left: 0;

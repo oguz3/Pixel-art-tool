@@ -1,25 +1,27 @@
 import { connect } from 'react-redux';
-import { setRow, setColl, setColor } from './actions';
+import { setRow, setColl, setColor, setUploadImg, setIsUpload } from './actions';
 import Canvas from './componenet/Canvas';
 import styles from './style/App.module.css';
 import Button from './componenet/Button';
-import { useState } from 'react';
 
 function App(props) {
-  const[pointerEvents, setPointerEvents] = useState('none');
-  const [selectedFile, setSelectedFile] = useState();
 
   function downloadBtn () {
-    //Son renkle yapılan cizimi ve o rengi almıyor indirmeden önce 
-    //renk değiştirirsem hepsini indiriyor.
-    props.setColor(props.color);
-    setPointerEvents('all')
+    let downloadItem = document.createElement('a');
+    downloadItem.href = props.imgdata;
+    downloadItem.download = 'image.png';
+    downloadItem.click();
   }
+
   const changeHandler = (e) => {
+    const file = [...e.target.files].pop();
     const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
+    fileReader.readAsDataURL(file);
     fileReader.onload = e => {
-      setSelectedFile(JSON.parse(e.target.result));
+      props.setUploadImg(e.target.result);
+      props.setIsUpload(true);
+      console.log(props.uploadImg)
+      console.log(e.target.result)
     };
 	};
 
@@ -48,23 +50,21 @@ function App(props) {
             </div>
 
             <button onClick={() => downloadBtn()}>
-              <a
-                type="button"
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(props.canvasToCode))}`}
-                download="save.json"
-                style={{pointerEvents: pointerEvents}}
-                >
-                  Save File
-              </a>
+              download
             </button>
 
             <input type="file" name="file" onChange={changeHandler} />
+             
           </div>
 
           <div className={styles.CanvasArea}>
             <div className={styles.CanvasBox}>
               <Canvas/>
             </div>
+          </div>
+
+          <div className={styles.AnimationArea}>
+              <img src={props.imgdata} className={styles.PreviewImg}/>
           </div>
 
           <div className={styles.iconsBox}>
@@ -81,8 +81,10 @@ const mapStateToProps = (state) => {
       row: state.row,
       coll: state.coll,
       color: state.color,
-      canvasToCode: state.canvasToCode
+      imgdata: state.imgdata,
+      isUpload: state.isUpload,
+      uploadImg: state.uploadImg,
   };
 };
 
-export default connect(mapStateToProps, { setRow, setColl, setColor })(App);
+export default connect(mapStateToProps, { setRow, setColl, setColor, setUploadImg, setIsUpload })(App);

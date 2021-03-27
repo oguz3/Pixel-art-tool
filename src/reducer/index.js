@@ -1,17 +1,15 @@
-import { SETROW, SETCOLL, SETITEM, SETGRID, SETCOLOR } from "../actions/index";
+import { SETROW, SETCOLL, SETITEM, SETGRID, SETCOLOR, SETIMGDATA, SETUPLOADIMG, SETISUPLOAD } from "../actions/index";
 
 const INITIAL_STATE = {
     cellSize: 15,
-    row: 5,
-    coll: 5,
+    row: 35,
+    coll: 35,
     hiddenGrid: false,
     activeItem: 'pencil',
     color: '#000000',
-    colorKey: 1,
-    canvasToCode: {
-        color: [{key: 1, color: '#000000'}],
-        matrix: []
-    }
+    imgdata: null,
+    uploadImg: null,
+    isUpload: false,
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
@@ -40,7 +38,21 @@ export const reducer = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             color: action.payload,
-            colorKey: parseInt(state.colorKey)+1
+        };
+    case SETIMGDATA:
+        return {
+            ...state,
+            imgdata: action.payload,
+        };
+    case SETUPLOADIMG:
+        return {
+            ...state,
+            uploadImg: action.payload,
+        };
+    case SETISUPLOAD:
+        return {
+            ...state,
+            isUpload: action.payload,
         };
     default:
       return state;
