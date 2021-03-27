@@ -23,12 +23,15 @@ function Canvas(props){
   }, [props.row, props.coll, props.cellSize])
 
   useEffect(() => {
-      console.log('girdi')
-      var img = new Image();
-      img.onload = function() {
-        contextRef.current.drawImage(img, 0, 0);
-      };
-      img.src = props.uploadImg;
+      if(props.isUpload){
+        contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        var img = new Image();
+        img.onload = function() {
+          contextRef.current.drawImage(img, 0, 0);
+        };
+        img.src = props.uploadImg;
+        props.setIsUpload(false);
+      }
   })
 
   const mouseDown = (e) => {

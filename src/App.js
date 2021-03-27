@@ -20,8 +20,6 @@ function App(props) {
     fileReader.onload = e => {
       props.setUploadImg(e.target.result);
       props.setIsUpload(true);
-      console.log(props.uploadImg)
-      console.log(e.target.result)
     };
 	};
 
