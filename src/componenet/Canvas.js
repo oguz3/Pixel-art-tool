@@ -57,8 +57,8 @@ function Canvas(props){
     <span>
       <canvas 
         ref={canvasRef}
-        width={15*props.row}
-        height={15*props.coll}
+        width={props.cellSize*props.row}
+        height={props.cellSize*props.coll}
         onMouseMove={(e) => drawCanvas(e)}
         onMouseDown={(e) => mouseDown(e)}
         onMouseUp={(e) => mouseUp(e)}
@@ -66,8 +66,8 @@ function Canvas(props){
       <canvas 
           className={`gridCanvas ${props.hiddenGrid ? 'hiddenGrid' : 'showGrid'}`}
           ref={gridCanvasRef}
-          width={15*props.row}
-          height={15*props.coll}
+          width={props.cellSize*props.row}
+          height={props.cellSize*props.coll}
           onMouseMove={(e) => drawCanvas(e)}
           onMouseDown={(e) => mouseDown(e)}
           onMouseUp={(e) => mouseUp(e)}

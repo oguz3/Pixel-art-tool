@@ -1,9 +1,9 @@
 import { SETROW, SETCOLL, SETITEM, SETGRID, SETCOLOR, SETIMGDATA, SETUPLOADIMG, SETISUPLOAD } from "../actions/index";
 
 const INITIAL_STATE = {
-    cellSize: 15,
+    cellSize: 20,
     row: 50,
-    coll: 50,
+    coll: 40,
     hiddenGrid: false,
     activeItem: 'pencil',
     color: '#000000',

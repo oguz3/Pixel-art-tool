@@ -1,14 +1,17 @@
 .box{
     position: relative;
     cursor: pointer;
-    width: 86px;
+    width: 140px;
+    height: 40px;
+    display: inline-block;
+    margin-top: 16px;
 }
 .input{
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 86px;
+    width: 140px;
     opacity: 0;
     cursor: pointer;
 }

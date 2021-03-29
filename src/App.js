@@ -18,8 +18,10 @@ function App(props) {
                 <Button type="eraser"/>
                 <Button type="grid"/>
             </div>
-            <DownloadBtn />
-            <UploadBtn />
+            <span>
+              <DownloadBtn />
+              <UploadBtn />
+            </span>
           </div>
           <div className={styles.CanvasArea}>
             <div className={styles.CanvasBox}>
@@ -27,7 +29,8 @@ function App(props) {
             </div>
           </div>
           <div className={styles.AnimationArea}>
-              <img src={props.imgdata} className={styles.PreviewImg}/>
+            <h3>Preview</h3>
+            <img src={props.imgdata} className={styles.PreviewImg}/>
           </div>
           <div className={styles.iconsBox}>
             <div>Icons made by <a href="https://www.flaticon.com/authors/pongsakornred" title="pongsakornRed">pongsakornRed</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

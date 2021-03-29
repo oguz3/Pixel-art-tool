@@ -34,8 +34,8 @@ body {
     opacity: 0;
 }
 .Btn{
-    height: 38px;
-    width: 86px;
+	height: 40px;
+    width: 140px;
     border: 1px solid white;
     border-radius: 4px;
     font-family: 'VT323', monospace;

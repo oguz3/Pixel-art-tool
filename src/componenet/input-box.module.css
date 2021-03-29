@@ -15,16 +15,16 @@
 }
 .Input input {
 	font-family: 'VT323', monospace;
-    height: 38px;
-    width: 86px;
+    height: 40px;
+    width: 140px;
     border: 0;
     padding: 5px 10px;
     border-radius: 2px;
     font-size: 22px;
 }
 .ColorPicker{
-    height: 38px;
-    width: 86px;
+    height: 40px;
+    width: 140px;
     background: aqua;
     border-radius: 2px;
 	cursor: pointer;

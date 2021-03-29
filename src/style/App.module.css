@@ -9,17 +9,17 @@
     font-size: 42px;
 }
 .Grid{
-	display: grid;
+    display: grid;
     grid-template-columns: 200px 1fr 200px;
-    height: calc(100vh - 64px);
-    padding-top: 16px;
+    height: calc(100vh - 80px);
+    padding-top: 32px;
 }
 .InputArea {
 	display: flex;
     flex-direction: column;
     padding-top: 16px;
     padding-left: 32px;
-    gap: 18px;
+    gap: 32px;
 }
 .CanvasArea{
 	width: 100%;
@@ -47,6 +47,13 @@
     object-fit: contain;
     background: white;
 }
+.AnimationArea h3{
+    margin: 0;
+    margin-bottom: 6px;
+    color: white;
+    font-size: 26px;
+    font-weight: 400;
+}
 .iconsBox {
 	position: absolute;
 	left: 0;
@@ -60,6 +67,7 @@
 }
 .BtnBox {
 	display: grid;
-    grid-template-columns: 38px 38px;
+    grid-template-columns: 40px 40px 40px;
+    grid-gap: 10px;
     gap: 10px;
 }
