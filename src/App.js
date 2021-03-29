@@ -3,7 +3,11 @@ import { setRow, setColl, setColor, setUploadImg, setIsUpload } from './actions'
 import Canvas from './componenet/Canvas';
 import styles from './style/App.module.css';
 import Button from './componenet/Button';
-
+//Line fonksiyonunu sil sadece kalem silgi ve grid ac kapat olsun.
+//Yüklenen resimin boyutu büyükse canvasa sığacak şekilde ayarla ya remi küçült ya canvası büyüt.
+//Canvası resim width, height değerine göre boyutlandırmak dağa mantıklı.
+// yükle indir butonlarını düzenle.
+//Animasyon nasıl yapılabilir bunun üzerine çalış.
 function App(props) {
 
   function downloadBtn () {
