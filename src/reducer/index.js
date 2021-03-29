@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     row: 35,
     coll: 35,
     hiddenGrid: false,
-    activeItem: 'line',
+    activeItem: 'pencil',
     color: '#000000',
     imgdata: null,
     uploadImg: null,

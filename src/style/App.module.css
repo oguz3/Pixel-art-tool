@@ -14,38 +14,12 @@
     height: calc(100vh - 64px);
     padding-top: 16px;
 }
-.InputBox {
+.InputArea {
 	display: flex;
     flex-direction: column;
     padding-top: 16px;
     padding-left: 32px;
     gap: 18px;
-}
-.Input {
-	display: flex;
-	flex-direction: column;
-}
-.Input label {
-	color: #fff;
-	margin: 0;
-	margin-bottom: 6px;
-	font-size: 22px;
-}
-.Input input {
-	font-family: 'VT323', monospace;
-    height: 32px;
-	width: 68px;
-    border: 0;
-    padding: 5px 10px;
-    border-radius: 2px;
-    font-size: 22px;
-}
-.ColorPicker{
-	height: 32px;
-    width: 68px;
-    background: aqua;
-    border-radius: 2px;
-	cursor: pointer;
 }
 .CanvasArea{
 	width: 100%;
