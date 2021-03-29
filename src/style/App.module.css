@@ -60,7 +60,6 @@
 }
 .BtnBox {
 	display: grid;
-    grid-template-columns: 32px 32px;
-    grid-gap: 4px;
-    gap: 4px;
+    grid-template-columns: 38px 38px;
+    gap: 10px;
 }

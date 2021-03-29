@@ -2,8 +2,8 @@ import { SETROW, SETCOLL, SETITEM, SETGRID, SETCOLOR, SETIMGDATA, SETUPLOADIMG, 
 
 const INITIAL_STATE = {
     cellSize: 15,
-    row: 35,
-    coll: 35,
+    row: 50,
+    coll: 50,
     hiddenGrid: false,
     activeItem: 'pencil',
     color: '#000000',

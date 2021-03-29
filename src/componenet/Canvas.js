@@ -20,6 +20,7 @@ function Canvas(props){
     const gridContext = gridCanvas.getContext('2d')
     //gridCanvas'a grid sistemini cizdiriyoruz
     drawMatrix(gridContext, props.row, props.coll, props.cellSize);
+    props.setImgdata(canvasRef.current.toDataURL('image/png'))
   }, [props.row, props.coll, props.cellSize])
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function Canvas(props){
           props.setRow(img.width/props.cellSize)
           props.setColl(img.height/props.cellSize)
           contextRef.current.drawImage(img, 0, 0);
+          props.setImgdata(canvasRef.current.toDataURL('image/png'))
         };
         img.src = props.uploadImg;
         props.setIsUpload(false);
