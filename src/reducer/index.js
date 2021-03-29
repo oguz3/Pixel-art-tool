@@ -1,4 +1,4 @@
-import { SETROW, SETCOLL, SETITEM, SETGRID, SETCOLOR, SETIMGDATA, SETUPLOADIMG, SETISUPLOAD } from "../actions/index";
+import { SETROW, SETCOLL, SETCELLSIZE, SETITEM, SETGRID, SETCOLOR, SETIMGDATA, SETUPLOADIMG, SETISUPLOAD } from "../actions/index";
 
 const INITIAL_STATE = {
     cellSize: 20,
@@ -23,6 +23,11 @@ export const reducer = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             coll: action.payload
+        };
+    case SETCELLSIZE:
+        return {
+            ...state,
+            cellSize: action.payload
         };
     case SETITEM:
         return {

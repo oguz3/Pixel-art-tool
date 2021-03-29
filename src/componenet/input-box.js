@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setRow, setColl, setColor } from "../actions";
+import { setRow, setColl, setColor, setCellSize } from "../actions";
 import styles from "./input-box.module.css";
 
 function InputBox(props) {
@@ -17,6 +17,13 @@ function InputBox(props) {
 				<input
 					value={props.coll}
 					onChange={(event) => props.setColl(event.target.value)}
+				/>
+			</div>
+			<div className={styles.Input}>
+				<label>Cell Size: </label>
+				<input
+					value={props.cellSize}
+					onChange={(event) => props.setCellSize(event.target.value)}
 				/>
 			</div>
 			<div className={`${styles.Input} colorPicker`}>
@@ -39,8 +46,9 @@ const mapStateToProps = (state) => {
 	return {
         row: state.row,
         coll: state.coll,
+		cellSize: state.cellSize,
         color: state.color,
     };
 };
 
-export default connect(mapStateToProps, { setRow, setColl, setColor })(InputBox);
+export default connect(mapStateToProps, { setRow, setColl, setColor, setCellSize })(InputBox);

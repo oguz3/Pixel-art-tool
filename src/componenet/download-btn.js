@@ -4,7 +4,7 @@ function DownloadBtn(props) {
     const downloadBtn = () => {
         let downloadItem = document.createElement('a');
         downloadItem.href = props.imgdata;
-        downloadItem.download = 'image.png';
+        downloadItem.download = `image-${props.cellSize}.png`;//Cell size
         downloadItem.click();
     }
 
@@ -18,6 +18,7 @@ function DownloadBtn(props) {
 const mapStateToProps = (state) => {
   return {
     imgdata: state.imgdata,
+    cellSize: state.cellSize
   };
 };
 
