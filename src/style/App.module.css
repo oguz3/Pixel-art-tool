@@ -9,43 +9,17 @@
     font-size: 42px;
 }
 .Grid{
-	display: grid;
+    display: grid;
     grid-template-columns: 200px 1fr 200px;
-    height: calc(100vh - 64px);
-    padding-top: 16px;
+    height: calc(100vh - 80px);
+    padding-top: 32px;
 }
-.InputBox {
+.InputArea {
 	display: flex;
     flex-direction: column;
     padding-top: 16px;
     padding-left: 32px;
-    gap: 18px;
-}
-.Input {
-	display: flex;
-	flex-direction: column;
-}
-.Input label {
-	color: #fff;
-	margin: 0;
-	margin-bottom: 6px;
-	font-size: 22px;
-}
-.Input input {
-	font-family: 'VT323', monospace;
-    height: 32px;
-	width: 68px;
-    border: 0;
-    padding: 5px 10px;
-    border-radius: 2px;
-    font-size: 22px;
-}
-.ColorPicker{
-	height: 32px;
-    width: 68px;
-    background: aqua;
-    border-radius: 2px;
-	cursor: pointer;
+    gap: 32px;
 }
 .CanvasArea{
 	width: 100%;
@@ -63,6 +37,23 @@
     max-width: calc(100vw - 408px);
     max-height: calc(100vh - 140px);
 }
+.AnimationArea{
+    width: 200px;
+    padding: 16px 32px;
+}
+.AnimationArea img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: white;
+}
+.AnimationArea h3{
+    margin: 0;
+    margin-bottom: 6px;
+    color: white;
+    font-size: 26px;
+    font-weight: 400;
+}
 .iconsBox {
 	position: absolute;
 	left: 0;
@@ -76,7 +67,7 @@
 }
 .BtnBox {
 	display: grid;
-    grid-template-columns: 32px 32px;
-    grid-gap: 4px;
-    gap: 4px;
+    grid-template-columns: 40px 40px 40px;
+    grid-gap: 10px;
+    gap: 10px;
 }

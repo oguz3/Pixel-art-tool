@@ -33,6 +33,19 @@ body {
     bottom: 0;
     opacity: 0;
 }
+.Btn{
+	height: 40px;
+    width: 140px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+	cursor: pointer;
+}
+.Btn:hover{
+	background: transparent;
+    color: white;
+}
 :focus {
     outline: none;
 }
