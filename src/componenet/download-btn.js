@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import styles from './download-btn.module.css'
 
 function DownloadBtn(props) {
     const downloadBtn = () => {
@@ -10,7 +9,7 @@ function DownloadBtn(props) {
     }
 
     return (
-        <button className={styles.Btn} onClick={() => downloadBtn()}>
+        <button className='Btn' onClick={() => downloadBtn()}>
             Download
         </button>
     );

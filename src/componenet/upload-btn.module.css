@@ -1,0 +1,18 @@
+.box{
+    position: relative;
+    cursor: pointer;
+    width: 86px;
+}
+.input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 86px;
+    opacity: 0;
+    cursor: pointer;
+}
+.box:hover button{
+    background: transparent;
+    color: white;
+}

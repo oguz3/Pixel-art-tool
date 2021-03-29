@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { setUploadImg, setIsUpload } from '../actions';
+import styles from './upload-btn.module.css'
 
 function UploadBtn(props) {
     const changeHandler = (e) => {
@@ -13,7 +14,10 @@ function UploadBtn(props) {
     };
 
     return (
-        <input type="file" name="file" onChange={changeHandler} />
+        <span className={styles.box}>
+            <button className='Btn'>Upload</button>
+            <input className={styles.input} type="file" name="file" onChange={changeHandler} />
+        </span>
     );
 }
 
