@@ -10,5 +10,3 @@ Free online pixel art drawing website. The project was created using React.
 * CSS
 
 ![Screenshot](https://github.com/oguz3/Pixel-art-tool/blob/main/screenshot/pixel-art-tool.PNG)
-
-![Screenshot](https://github.com/oguz3/Pixel-art-tool/blob/main/screenshot/artToJson.png)
