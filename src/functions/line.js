@@ -5,13 +5,36 @@ export default function cizgi(canvas, ctx, start, last, row, coll, cellSize, col
 
     ctx.fillStyle = color;
     ctx.fillRect (startPos.x, startPos.y, cellSize, cellSize);
-    let size = (lastPos.x - startPos.x)/cellSize;
-
-    for(let i=0; i<Math.abs(size); i++){
-        if(size < 0){
-            ctx.fillRect (startPos.x+(cellSize*-i), startPos.y+(cellSize*-i), cellSize, cellSize);
+    let size = {
+        x: (lastPos.x - startPos.x)/cellSize,
+        y: (lastPos.y - startPos.y)/cellSize
+    }
+    let j = Math.abs(size.x)<Math.abs(size.y) ? size.y : size.x
+    for(let i=0; i<Math.abs(j); i++){
+        if(size.x === 0 || size.y === 0){
+            if(size.y === 0){
+                if(size.x < 0){
+                    ctx.fillRect (startPos.x+(cellSize*-i), startPos.y, cellSize, cellSize);
+                }else{
+                    ctx.fillRect (startPos.x+(cellSize*i), startPos.y, cellSize, cellSize);
+                }
+            }else if(size.x === 0){
+                if(size.y < 0){
+                    ctx.fillRect (startPos.x, startPos.y+(cellSize*-i), cellSize, cellSize);
+                }else{
+                    ctx.fillRect (startPos.x, startPos.y+(cellSize*i), cellSize, cellSize);
+                }
+            }
         }else{
-            ctx.fillRect (startPos.x+(cellSize*i), startPos.y+(cellSize*i), cellSize, cellSize);
+            if(size.x < 0 && size.y > 0){
+                ctx.fillRect (startPos.x+(cellSize*-i), startPos.y+(cellSize*i), cellSize, cellSize);
+            }else if(size.x > 0 && size.y < 0){
+                ctx.fillRect (startPos.x+(cellSize*i), startPos.y+(cellSize*-i), cellSize, cellSize);
+            }else if(size.x > 0 && size.y > 0){
+                ctx.fillRect (startPos.x+(cellSize*i), startPos.y+(cellSize*i), cellSize, cellSize);
+            }else if(size.x < 0 && size.y < 0){
+                ctx.fillRect (startPos.x+(cellSize*-i), startPos.y+(cellSize*-i), cellSize, cellSize);
+            }
         }
     }
 }
